@@ -1,6 +1,7 @@
 const PostList = () => {
     return(
         <>
+        <h1>lista post</h1>
         </>
     )
 }

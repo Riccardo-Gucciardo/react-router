@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //pages
 import HomePage from './pages/HomePage';
-import ContactPage from './pages/ContactPage';
-import Products from './pages/products/Products';
-import SingleProduct from './pages/products/SingleProduct';
+import AboutUs from './pages/aboutUs';
+import PostList from './pages/postList';
+
 
 //layouts
-// import DefaultLayout from "./layouts/DefaultLayout";
+import DefaultLayout from './layouts/DefaultLayout';
 
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route Component={DefaultLayout}>
           <Route path="/" Component={HomePage} />
-          <Route path="/chi-siamo" Component={AboutUs} />
-          <Route path="/posts-list" Component={PostList} />
+          <Route path="/AboutUs" Component={AboutUs} />
+          <Route path="/PostList" Component={PostList} />
         </Route>
       </Routes>
     </BrowserRouter>
