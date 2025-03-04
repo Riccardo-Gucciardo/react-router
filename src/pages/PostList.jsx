@@ -2,36 +2,41 @@ import { useState,useEffect } from "react"
 import axios from "axios"
 
 const PostList = () => {
+
     
-    const {products,setProducts} =useState([])
+    const {posts,setPosts} = useState([])
 
     useEffect( () => {
-        axios.get('http://localhost:3000/api/posts/')
-        .then(res => setProducts(res.data))
-    },[])
+        axios.get('http://localhost:3000/api/posts')
+        .then(res => setPosts(res.data))
+    })
+
+
     return(
         <>
         <div className="container">
             <div className="row">
                 {
-                    products.map( (element) => {
+                    posts.map((elem) => {
+
+                        const {id,title,tags} = elem
+                        
                         return(
-                            <div key={element.id} className="col-4">
-                                <div >
-                                    <div>
-                                        <h4>{element.title}</h4>
-                                        <p>{element.content}</p>
+                            <div key={id} className="col-4">
+                                <div className="" >
+                                        <h4>{title}</h4>
+                                        <p>{tags}</p>
                                     </div>
-                                </div>
                             </div>
                         )
-                    })
+                    })    
                 }
             </div>
 
         </div>
-        </>
-    )
+    </>)
+    
+
 }
 
 export default PostList
