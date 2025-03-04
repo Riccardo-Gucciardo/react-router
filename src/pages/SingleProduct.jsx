@@ -14,7 +14,7 @@ const SingleProducts = () => {
             tags: [],
     }
     
-    const [ post,setPost] = useState(initialPost);
+    const [ post,setPost] = useState(initialPost); 
     
     useEffect(() => {
             axios.get('http://localhost:3000/api/posts' + '/' + id).then(res => setPost(res.data))
@@ -23,7 +23,7 @@ const SingleProducts = () => {
     },[id])
 
     return(
-        <h1>prodotto selezionato: {post.title}</h1>
+        <h1>prodotto selezionato: {post.title}</h1> 
     )
 }
 
